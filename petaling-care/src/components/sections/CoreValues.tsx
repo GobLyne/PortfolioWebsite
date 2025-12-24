@@ -55,11 +55,7 @@ export default function CoreValues() {
             // Create varied grid spans for bento look
             const gridClass = index === 0 
               ? "col-span-2 row-span-2" 
-              : index === 1 
-              ? "col-span-2" 
-              : index === 4 
-              ? "col-span-2" 
-              : "";
+              : "col-span-2";
 
             return (
               <motion.div
@@ -71,7 +67,7 @@ export default function CoreValues() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <div
-                  className={`h-full ${value.color} rounded-2xl p-6 overflow-hidden transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl`}
+                  className={`h-full min-h-[280px] ${value.color} rounded-2xl p-6 md:p-8 overflow-hidden transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl`}
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
@@ -97,12 +93,8 @@ export default function CoreValues() {
                       {value.title}
                     </h3>
 
-                    {/* Description - Show on larger cards */}
-                    <p
-                      className={`text-white/80 text-sm leading-relaxed ${
-                        index === 0 ? "" : "hidden md:block"
-                      }`}
-                    >
+                    {/* Description */}
+                    <p className="text-white/80 text-sm leading-relaxed">
                       {value.description}
                     </p>
 

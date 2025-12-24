@@ -51,25 +51,25 @@ export default function Impact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 overflow-hidden">
+              <div className="bg-white rounded-2xl p-6 md:p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 overflow-visible relative">
                 {/* Background Decoration */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-secondary-400 to-accent-500" />
                 
                 {/* Floating circles */}
                 <motion.div
-                  className="absolute -top-10 -right-10 w-20 h-20 bg-primary-100 rounded-full"
+                  className="absolute -top-8 -right-8 w-16 h-16 bg-primary-100 rounded-full -z-10"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
                 />
 
                 {/* Counter */}
-                <div className="relative z-10">
+                <div className="relative z-10 py-2">
                   <AnimatedCounter
                     end={stat.value}
                     suffix={stat.suffix}
-                    className="text-4xl md:text-5xl font-bold gradient-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text leading-tight block"
                   />
-                  <p className="text-gray-600 mt-2 font-medium">{stat.label}</p>
+                  <p className="text-gray-600 mt-3 font-medium text-sm md:text-base">{stat.label}</p>
                 </div>
 
                 {/* Hover Effect */}
@@ -88,8 +88,17 @@ export default function Impact() {
           transition={{ duration: 0.6 }}
         >
           <div className="relative bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+               <img 
+                 src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Impact Background" 
+                 className="w-full h-full object-cover opacity-20 mix-blend-overlay"
+               />
+            </div>
+
             {/* Background Elements */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 z-0">
               <div className="absolute top-0 right-0 w-96 h-96 bg-secondary-400/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent-400/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
             </div>

@@ -44,31 +44,22 @@ export default function Programs() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
-                {/* Image Area with Gradient */}
-                <div
-                  className={`relative h-48 bg-gradient-to-br ${
+                {/* Image Area */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={program.image} 
+                    alt={program.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${
                     categoryColors[program.category as keyof typeof categoryColors]
-                  }`}
-                >
-                  {/* Icon Placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      className="text-6xl opacity-80"
-                      animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                    >
-                      {categoryIcons[program.category as keyof typeof categoryIcons]}
-                    </motion.div>
-                  </div>
-
-                  {/* Overlay Pattern */}
-                  <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
-                  </div>
+                  } opacity-60 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-70`} />
 
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                      <span>{categoryIcons[program.category as keyof typeof categoryIcons]}</span>
                       {program.category}
                     </span>
                   </div>

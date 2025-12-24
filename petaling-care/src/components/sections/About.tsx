@@ -98,32 +98,25 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             {/* Main Card */}
-            <div className="relative z-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl p-8 md:p-12 shadow-2xl shadow-primary-500/30">
-              {/* Logo */}
-              <motion.div
-                className="flex justify-center mb-8"
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              >
-                <div className="w-32 h-32 bg-white rounded-2xl flex items-center justify-center shadow-lg">
-                  <LogoIcon size={80} />
-                </div>
-              </motion.div>
-
-              {/* Quote */}
-              <blockquote className="text-center">
-                <p className="text-xl md:text-2xl text-white font-medium italic mb-4">
-                  &ldquo;Bersama-sama kita membina komuniti yang lebih kuat, lebih bersatu, 
-                  dan lebih berdaya maju.&rdquo;
-                </p>
-                <footer className="text-white/80">
-                  — Pasukan Petaling Care
-                </footer>
-              </blockquote>
-
-              {/* Decorative Elements */}
-              <div className="absolute top-4 right-4 w-20 h-20 bg-secondary-400/20 rounded-full blur-xl" />
-              <div className="absolute bottom-4 left-4 w-16 h-16 bg-accent-400/20 rounded-full blur-xl" />
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-primary-500/30 group h-[500px]">
+              <img 
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2064&auto=format&fit=crop" 
+                alt="Petaling Care Community" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              
+              {/* Overlay Content */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/20 to-transparent p-8 flex flex-col justify-end">
+                <blockquote className="text-center">
+                  <p className="text-xl md:text-2xl text-white font-medium italic mb-4 drop-shadow-md">
+                    &ldquo;Bersama-sama kita membina komuniti yang lebih kuat, lebih bersatu, 
+                    dan lebih berdaya maju.&rdquo;
+                  </p>
+                  <footer className="text-white/90 font-semibold">
+                    — Pasukan Petaling Care
+                  </footer>
+                </blockquote>
+              </div>
             </div>
 
             {/* Floating Cards */}

@@ -13,9 +13,18 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2074&auto=format&fit=crop" 
+          alt="Background" 
+          className="w-full h-full object-cover opacity-40 grayscale"
+        />
+      </div>
+
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800" />
-      
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800 mix-blend-multiply z-0" />
+
       {/* Animated Gradient Overlay */}
       <div className="absolute inset-0 opacity-50">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-600/50 via-accent-500/30 to-secondary-500/40 animate-gradient bg-[length:400%_400%]" />
@@ -32,7 +41,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl" />
 
       {/* Content */}
-      <Container className="relative z-10 pt-20">
+      <Container className="relative z-10 pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div
@@ -127,28 +136,28 @@ export default function Hero() {
             ))}
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <motion.a
-            href="#tentang"
-            className="flex flex-col items-center text-white/60 hover:text-white transition-colors"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <span className="text-sm mb-2">Tatal ke bawah</span>
-            <ChevronDownIcon size={24} />
-          </motion.a>
-        </motion.div>
       </Container>
 
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+      >
+        <motion.a
+          href="#tentang"
+          className="flex flex-col items-center text-primary-600 hover:text-primary-700 transition-colors"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        >
+          <span className="text-sm mb-2 font-medium">Tatal ke bawah</span>
+          <ChevronDownIcon size={24} />
+        </motion.a>
+      </motion.div>
+
       {/* Wave Decoration */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0 z-10">
         <svg
           viewBox="0 0 1440 120"
           className="w-full h-auto"

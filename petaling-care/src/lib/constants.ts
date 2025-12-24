@@ -59,7 +59,7 @@ export const CORE_VALUES = [
     title: "Daya Saing",
     description: "Mendorong semangat daya saing yang sihat untuk mencapai kecemerlangan.",
     icon: "competition",
-    color: "bg-coral-500",
+    color: "bg-accent-500",
   },
   {
     id: 3,
@@ -80,7 +80,7 @@ export const CORE_VALUES = [
     title: "Integriti",
     description: "Mengamalkan kejujuran dan ketelusan dalam setiap tindakan.",
     icon: "integrity",
-    color: "bg-primary-700",
+    color: "bg-primary-500",
   },
 ];
 
@@ -90,28 +90,28 @@ export const PROGRAMS = [
     id: 1,
     title: "Program Pendidikan",
     description: "Kelas tuisyen percuma, bengkel kemahiran, dan bimbingan akademik untuk pelajar.",
-    image: "/images/education.jpg",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
     category: "Pendidikan",
   },
   {
     id: 2,
     title: "Aktiviti Sukan",
     description: "Pertandingan sukan, kelas kecergasan, dan program kesihatan untuk semua peringkat umur.",
-    image: "/images/sports.jpg",
+    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop",
     category: "Sukan",
   },
   {
     id: 3,
     title: "Bantuan Kebajikan",
     description: "Bantuan makanan, keperluan asas, dan sokongan kewangan untuk keluarga yang memerlukan.",
-    image: "/images/welfare.jpg",
+    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=2070&auto=format&fit=crop",
     category: "Kebajikan",
   },
   {
     id: 4,
     title: "Program Sukarelawan",
     description: "Peluang sukarelawan untuk menyumbang masa dan tenaga kepada masyarakat.",
-    image: "/images/volunteer.jpg",
+    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop",
     category: "Sukarelawan",
   },
 ];
